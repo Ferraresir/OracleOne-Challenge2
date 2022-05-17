@@ -26,10 +26,10 @@ button {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
-  max-width: 100vw;
-  height: 100vh;
+  max-width: 1440px;
+  max-height: 1024px;
   padding: 2rem 2rem;
+  margin: 0 auto;
 }
 
 .logo {
@@ -46,6 +46,7 @@ button {
   gap: 2rem;
   justify-content: center;
   align-items: center;
+  height: 90vh;
 }
 
 #btn-start {
@@ -66,12 +67,15 @@ button {
 #input {
   display: none;
   flex-grow: 1;
+  gap: 10rem;
   flex-direction: column;
   justify-content: space-around;
-  align-items:center;
+  align-items: center;
+  height: 90vh;
 }
 
 #word-input {
+  margin-right: 6rem;
   resize: none;
   border: none;
   background: none;
@@ -85,11 +89,20 @@ button {
   display: none;
   flex-direction: column;
   flex-grow: 1;
-  justify-content: space-between;
+  height: 90vh;
+  margin: 0 auto;
+  justify-content: space-around;
   align-items: center;
 }
 
-.buttons{
+#gameword {
+  display: flex;
+  margin: 0 auto;
+  gap: 1rem;
+  margin-top: 40vh;
+}
+
+.buttons {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -114,7 +127,7 @@ button {
 }
 
 @media screen and (max-width: 810px) {
-  #input{
+  #input {
     margin-top: 10rem;
     justify-content: space-between;
   }
