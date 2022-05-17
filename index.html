@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="esp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <main class="wrapper">
+      <div class="logo">
+        <a href="https://www.aluracursos.com" target="_blank">
+          <img src="./assets/Vector.png" alt="logo de alura" />
+        </a>
+      </div>
+
+      <div id="welcome">
+        <button id="btn-start">Iniciar juego</button>
+        <button id="btn-addword">Agregar nueva palabra</button>
+      </div>
+
+      <div id="game">
+        <div id="gameimage"></div>
+        <div id="gameword">
+        </div>
+        <div class="buttons">
+          <button class="btn-blue" id="btn-newgame">Nuevo juego</button>
+          <button class="btn-gray" id="btn-giveup">Desistir</button>
+        </div>
+      </div>
+
+      <div id="input">
+        <textarea
+          id="word-input"
+          rows="1"
+          cols="30"
+          placeholder="Ingrese una palabra"
+          autofocus
+        ></textarea>
+        <div id="interface">
+          <span>
+            <img src="./assets/simbol.png" alt="" />
+          </span>
+          <small>Max. de 8 letras</small>
+          <div class="buttons">
+            <button class="btn-blue" id="btn-save">Guardar</button>
+            <button class="btn-gray" id="btn-cancel">Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="./js/script.js"></script>
+</html>
