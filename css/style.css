@@ -82,6 +82,7 @@ button {
   font-size: 1.5rem;
   text-align: start;
   color: var(--dark-blue);
+  text-transform: uppercase;
 }
 
 
@@ -90,23 +91,37 @@ button {
   flex-direction: column;
   flex-grow: 1;
   height: 90vh;
-  margin: 0 auto;
-  justify-content: space-around;
+  width: 100%;
   align-items: center;
+  padding-top: 10%;
+  justify-content: space-around;
+
 }
 
 #gameword {
   display: flex;
-  margin: 0 auto;
+  justify-content: center;
   gap: 1rem;
-  margin-top: 40vh;
+  width: 100%;
+
+}
+
+#badletters {
+  width: 100%;
+}
+
+#canvas {
+  background: gray;
+  width: 100%;
 }
 
 .buttons {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  justify-content: center;
 }
+
 
 
 .btn-blue {

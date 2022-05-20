@@ -41,26 +41,23 @@ function chooseWord() {
   return word;
 }
 
-//add word
-function addWord(word) {
-  words.push(word.touperCase());
-}
-
 //eventlisteners
 btnStart.addEventListener("click", function () {
   startGame();
 });
 
 btnWord.addEventListener("click", function () {
+  newWord.value = "";
   switchdisplay("input");
 });
 
 btnSavePlay.addEventListener("click", function () {
-  if (newWord.value.length <= 8) {
+  if (newWord.value.length <= 8 && newWord.value.length > 0) {
     addWord(newWord.value);
+    words.push(newWord.value);
     switchdisplay("welcome");
   } else {
-    alert("La palabra no puede tener mas de 8 caracteres");
+    alert("La palabra debe tener entre 1 y 8 caracteres");
   }
 });
 
@@ -68,22 +65,28 @@ btnGiveUp.addEventListener("click", function () {
   location.reload();
 });
 
+btnCancelWord.addEventListener("click", function () {
+  location.reload();
+});
+
+btnNewGame.addEventListener("click", function () {});
+
 //GAME LOGIC
 
 function startGame() {
   let word = chooseWord().split("");
   let badletters = [];
   let errors = 7;
-  let okletters = 0;
+  let guess = [];
   switchdisplay("game");
   word.map((letter, inx) => {
-    gameWord.innerHTML += `<div style="display:flex; flex-direction:column;">
+    console.log(letter);
+    gameWord.innerHTML += `<div style="display:flex; flex-direction:column;width: 3rem;">
       <span id="l${inx}" style="font-size:3rem; text-align: center; color: var(--light-blue)">${letter}</span>
       <img class="letter-img" src="assets/Rectangle.png" alt="letter line">
       </div>`;
   });
   addEventListener("keypress", (e) => {
-    console.log(typeof e.key);
     let key = e.key.toUpperCase();
     if (isFinite(key)) {
       alert("No se admiten numeros");
@@ -94,14 +97,13 @@ function startGame() {
       } else {
         if (word.includes(key)) {
           word.map((letter, idx) => {
-            if (letter === key) {
+            if (letter === key && !guess.includes(letter)) {
               document.getElementById(`l${idx}`).style.color =
                 "var(--dark-blue)";
-              okletters++;
-              if (okletters == word.length) {
-                alert("¡Felicidades! Has ganado");
-                location.reload();
-              }
+              guess.splice(idx, 0, letter);
+              console.log(word);
+              console.log(guess);
+              if (guess === word) alert("¡Felicidades! Has ganado");
             }
           });
         } else if (!badletters.includes(key)) {

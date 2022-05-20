@@ -21,10 +21,11 @@
       </div>
 
       <div id="game">
-        <div id="badletters"></div>
-        <div id="gameimage"></div>
-        <div id="gameword">
+        <div id="gameimage">
+          <canvas id="canvas" width="600" height="400"></canvas>
         </div>
+        <div id="gameword"></div>
+        <div id="badletters"></div>
         <div class="buttons">
           <button class="btn-blue" id="btn-newgame">Nuevo juego</button>
           <button class="btn-gray" id="btn-giveup">Desistir</button>
@@ -37,7 +38,7 @@
           rows="1"
           cols="30"
           placeholder="Ingrese una palabra"
-          autofocus
+          maxlength="8"
         ></textarea>
         <div id="interface">
           <span>
